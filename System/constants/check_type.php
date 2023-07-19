@@ -12,19 +12,15 @@ $error_code = $_GET['r'];
 	$stmt->bindParam(':errorcode', $error_code);
     $stmt->execute();
     $result = $stmt->fetchAll();
+
     foreach($result as $row)
     {
 		
      $description = $row['description'];
      $type = $row['type'];
-     print '
-	 <div class="alert alert-'.$type.'">
-     '.$description.'
-	 </div>
-     ';
-     
+     print $type ;
 	}
-    
+
 					  
 	}catch(PDOException $e)
     {
